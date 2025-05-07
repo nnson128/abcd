@@ -1,0 +1,210 @@
+.header-section {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+  
+    .header-desktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+  
+      .brand {
+        cursor: pointer;
+  
+        .brand-text {
+          font-size: 24px;
+          font-weight: 700;
+          background: linear-gradient(90deg, #1890ff, #40a9ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+  
+      .main-menu {
+        border-bottom: none;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+  
+        .ant-menu-item {
+          padding: 0 20px;
+          font-size: 16px;
+          font-weight: 500;
+          border-radius: 6px;
+          transition: all 0.3s ease;
+  
+          a {
+            color: #333;
+          }
+  
+          &:hover {
+            background: #e6f7ff;
+            a {
+              color: #1890ff;
+            }
+          }
+  
+          &.ant-menu-item-selected {
+            background: #e6f7ff;
+            a {
+              color: #1890ff;
+            }
+          }
+  
+          .anticon {
+            font-size: 16px;
+            margin-right: 8px;
+          }
+        }
+      }
+  
+      .auth-section {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  
+        .user-info {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 5px 10px;
+          border-radius: 20px;
+          transition: background 0.3s ease;
+          cursor: pointer;
+  
+          &:hover {
+            background: #f5f5f5;
+          }
+  
+          .user-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+          }
+  
+          .user-avatar {
+            background: #1890ff;
+            font-size: 14px;
+          }
+        }
+  
+        .login-btn {
+          font-size: 14px;
+          color: #333;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            color: #1890ff;
+          }
+        }
+  
+        .register-btn {
+          background: linear-gradient(90deg, #1890ff, #40a9ff);
+          border: none;
+          border-radius: 6px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            background: linear-gradient(90deg, #40a9ff, #1890ff);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+          }
+        }
+      }
+    }
+  
+    .header-mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      padding: 0 10px;
+  
+      .mobile-brand {
+        font-size: 20px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #1890ff, #40a9ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor: pointer;
+      }
+  
+      .mobile-menu-icon {
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: #1890ff;
+        }
+      }
+    }
+  
+    .mobile-drawer {
+      .ant-drawer-header {
+        background: #fff;
+        border-bottom: 1px solid #f0f0f0;
+  
+        .ant-drawer-title {
+          font-size: 16px;
+          font-weight: 600;
+          color: #333;
+        }
+      }
+  
+      .ant-drawer-body {
+        padding: 0;
+      }
+  
+      .mobile-menu {
+        .ant-menu-item {
+          font-size: 16px;
+          font-weight: 500;
+          padding: 10px 20px;
+          transition: all 0.3s ease;
+  
+          a, span {
+            color: #333;
+          }
+  
+          &:hover {
+            background: #e6f7ff;
+            a, span {
+              color: #1890ff;
+            }
+          }
+  
+          &.ant-menu-item-selected {
+            background: #e6f7ff;
+            a, span {
+              color: #1890ff;
+            }
+          }
+  
+          .anticon {
+            font-size: 16px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .header-section {
+      .container {
+        padding: 0 10px;
+      }
+    }
+  }

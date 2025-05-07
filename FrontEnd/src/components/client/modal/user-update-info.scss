@@ -1,0 +1,37 @@
+.user-update-page {
+    background: #ffffff;
+  
+    .user-update-form {
+      max-width: 100%;
+      width: 100%;
+      padding: 8px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: none;
+  
+      .ant-form-item {
+        margin-bottom: 12px;
+      }
+  
+      .update-button {
+        background: linear-gradient(90deg, #1890ff, #40a9ff);
+        border: none;
+        border-radius: 6px;
+        height: 40px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+  
+        &:hover {
+          background: linear-gradient(90deg, #40a9ff, #1890ff);
+          transform: translateY(-2px);
+          box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+        }
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .user-update-form {
+        padding: 4px;
+      }
+    }
+  }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Xác nhận gửi CV</title>
+    <meta charset="UTF-8">
+</head>
+
+<body
+    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0;">
+    <table style="max-width: 600px; margin: 40px auto; background-color: #ffffff; border-radius: 8px; padding: 30px;">
+        <tr>
+            <td>
+                <h2 style="color: #333;">Xác nhận gửi CV thành công</h2>
+
+                <p style="font-size: 16px; color: #555;">
+                    Xin chào: <strong><span th:text="${name}"></span></strong>
+                </p>
+
+                <p style="font-size: 16px; color: #555;">
+                    Chúng tôi đã nhận được hồ sơ ứng tuyển của bạn cho công việc:
+                    <strong><span th:text="${value.nameJob}"></span></strong>,
+                    tại công ty:
+                    <strong><span th:text="${value.nameCompany}"></span></strong>.
+                </p>
+
+                <p style="font-size: 16px; color: #555;">
+                    Thời gian gửi: <span th:text="${#dates.format(value.createdAt, 'dd/MM/yyyy HH:mm')}"></span>
+                </p>
+
+
+                <div style="margin: 20px 0;">
+                    <a th:href="'http://localhost:8080/storage/resume/' + ${value.url}"
+                        style="display: inline-block; background-color: #007BFF; color: white; text-decoration: none; padding: 12px 20px; border-radius: 5px; font-size: 16px;">
+                        Xem lại CV đã gửi
+                    </a>
+                </div>
+
+                <div style="margin: 20px 0; border-top: 1px solid #ddd;"></div>
+
+                <p style="font-size: 16px; color: #555;">
+                    Chúng tôi rất cảm ơn bạn đã quan tâm và tin tưởng lựa chọn công ty. Hồ sơ của bạn đang được xem xét,
+                    và chúng tôi sẽ liên hệ lại nếu bạn phù hợp với vị trí này.
+                </p>
+
+                <p style="font-size: 16px; color: #555;">Trân trọng,</p>
+                <p style="font-size: 16px; color: #555;">
+                    <strong>Bộ phận Tuyển dụng - <span th:text="${value.nameCompany}">ABC Corp</span></strong>
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

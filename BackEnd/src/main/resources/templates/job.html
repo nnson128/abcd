@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Tìm kiếm việc làm</title>
+    <meta charset="UTF-8">
+</head>
+
+<body
+    style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; padding: 20px; color: #333;">
+    <table
+        style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <tr>
+            <td style="padding: 20px 30px; background-color: #004080; color: white;">
+                <div style="font-size: 22px; font-weight: bold;">ADMIN</div>
+                <div style="font-size: 16px;">Công việc chất lượng cho bạn</div>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 30px;">
+                <div style="font-size: 18px; margin-bottom: 10px;">Xin chào <span th:text="${name}"></span>,</div>
+                <div style="font-size: 16px;">Hôm nay chúng tôi tìm được một số công việc phù hợp với bạn:</div>
+
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;" />
+
+                <table width="100%" style="border-collapse: collapse;">
+                    <tr th:each="job : ${value}">
+                        <td style="padding: 15px 0;">
+                            <div style="font-size: 18px; font-weight: bold;">
+                                <a th:href="@{'http://localhost:4173/job/' + ${job.nameSlug} + '?id=' + ${job.idJob}}"
+                                    target="_blank" style="text-decoration: none; color: #0066cc;"
+                                    th:text="${job.name}"></a>
+                            </div>
+                            <div style="font-size: 14px; color: #777;" th:text="${job.company.name}"></div>
+                            <div style="font-size: 15px; margin-top: 5px; color: #28a745; font-weight: 500;">
+                                Lương:
+                                <span th:text="${#numbers.formatDecimal(job.salary, 0, 'COMMA', 0, 'POINT')}"></span> đ
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <span th:each="skill : ${job.skills}"
+                                    style="display: inline-block; background-color: #f0f0f0; color: #333; font-size: 13px; padding: 5px 10px; border-radius: 20px; margin-right: 5px; margin-bottom: 5px;"
+                                    th:text="${skill.name}"></span>
+                            </div>
+                            <hr style="margin-top: 20px; border: none; border-top: 1px dashed #ddd;" />
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="http://localhost:4173/job" target="_blank"
+                        style="display: inline-block; padding: 12px 24px; font-size: 16px; background-color: #e60023; color: white; border-radius: 5px; text-decoration: none;">
+                        Xem thêm việc làm tại đây
+                    </a>
+                </div>
+
+                <div style="margin-top: 40px; font-size: 16px;">
+                    <p>Thân ái,</p>
+                    <p><strong>Admin</strong></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

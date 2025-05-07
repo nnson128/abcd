@@ -1,0 +1,445 @@
+/* ========== HEADER STYLES ========== */
+.headerSection {
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+
+    .container {
+        width: 100%;
+        padding: 0 24px;
+    }
+}
+
+.headerDesktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.brand {
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    .brandText {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1890ff;
+        background: linear-gradient(to right, #1890ff, #52c41a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #1890ff, #52c41a);
+            transition: width 0.3s ease;
+        }
+    }
+
+    &:hover {
+        .brandText::after {
+            width: 100%;
+        }
+    }
+}
+
+.mainMenu {
+    border-bottom: none;
+    line-height: 68px;
+
+    .ant-menu-item {
+        padding: 0 20px;
+        font-weight: 500;
+        color: #555;
+        transition: all 0.3s ease;
+
+        &::after {
+            bottom: 10px !important;
+            height: 3px !important;
+            border-radius: 3px;
+        }
+
+        &:hover {
+            color: #1890ff !important;
+        }
+    }
+}
+
+.authSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .loginBtn {
+        color: #555;
+        font-weight: 500;
+
+        &:hover {
+            color: #1890ff;
+        }
+    }
+
+    .registerBtn {
+        background: #1890ff;
+        font-weight: 500;
+    }
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.04);
+
+        .userName {
+            color: #1890ff;
+        }
+
+        .userAvatar {
+            transform: scale(1.1);
+        }
+    }
+
+    .userName {
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .userAvatar {
+        background: linear-gradient(135deg, #1890ff, #52c41a);
+        color: white;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Mobile styles */
+.headerMobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+
+    .mobileBrand {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1890ff;
+        cursor: pointer;
+    }
+
+    .mobileMenuIcon {
+        font-size: 20px;
+        color: #555;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: #1890ff;
+            background: rgba(0, 0, 0, 0.04);
+        }
+    }
+}
+
+.mobileDrawer {
+    .ant-drawer-header {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .ant-drawer-body {
+        padding: 0;
+    }
+}
+
+.mobileMenu {
+    border-right: none;
+
+    .ant-menu-item {
+        padding-left: 24px !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba(24, 144, 255, 0.05) !important;
+        }
+
+        &.ant-menu-item-selected {
+            background: rgba(24, 144, 255, 0.1) !important;
+        }
+    }
+}
+
+.navLink {
+    color: inherit;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #1890ff;
+    }
+}
+
+.navIcon {
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+/* ========== KEEP EXISTING STYLES ========== */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1260px) {
+    .container {
+        width: 1260px;
+    }
+}
+
+@media (min-width: 767px) {
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-button {
+        width: 8px;
+        height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgb(255, 255, 255);
+        border: thin solid rgb(238, 238, 238);
+        box-shadow: 0px 0px 3px #dfdfdf inset;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border: thin solid #ccc;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #7d7d7d;
+    }
+}
+
+.card-job-section {
+    .empty {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 50px;
+    }
+
+    .dflex-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dflex-pc {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .job-content {
+        .card-job-content {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+
+            .card-job-left {
+                width: 70px;
+                margin: 0 auto;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            .card-job-right {
+                width: 100%;
+
+                .job-title {
+                    overflow: hidden;
+                    color: #353535;
+                    font-weight: 600;
+                    text-overflow: ellipsis;
+                    text-align: left;
+                    margin-bottom: 10px;
+                    line-height: 1.3;
+                    transition: .2s all;
+                    font-size: 17px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                .job-location {
+                    padding-bottom: 5px;
+                }
+
+                .job-updatedAt {
+                    display: block;
+                    float: right;
+                    color: #919191;
+                }
+            }
+        }
+    }
+}
+
+.company-section {
+
+    .company-content {
+        padding-top: 50px;
+
+        .card-customize {
+            height: 200px;
+            width: 200px;
+            margin: 20px auto;
+        }
+    }
+}
+
+.home-section {
+
+
+    .empty {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 50px;
+    }
+
+    .dflex-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dflex-pc {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .title {
+        font-size: 27px;
+        font-family: "Roboto", sans-serif;
+        color: #353535;
+        line-height: 35px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+.detail-job-section {
+
+    .header {
+        margin: 20px 0;
+        color: #353535;
+        font-size: 27px;
+    }
+
+    .btn-apply {
+        width: 100%;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+        -webkit-font-smoothing: antialiased;
+        font-size: 20px;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 5px;
+        background-color: #ea1e30;
+        -webkit-font-smoothing: antialiased;
+        outline: 0;
+
+        &:hover {
+            background-color: #d82727;
+        }
+    }
+
+    .salary {
+        padding: 15px 0;
+    }
+
+    .location {
+        padding-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 23px;
+        color: #353535;
+        font-weight: 400;
+        margin: 25px 0 0;
+    }
+
+    ul {
+        padding-left: 2rem;
+    }
+
+    li {
+        line-height: 2em;
+    }
+
+    p {
+        color: #3a3a3a;
+        font-size: 16px;
+        line-height: 1.7em;
+        width: 100%;
+        line-height: 2em;
+    }
+
+    .company {
+        margin: 20px 0;
+        color: #353535;
+        font-size: 27px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+}

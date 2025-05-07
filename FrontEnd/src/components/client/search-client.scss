@@ -1,0 +1,184 @@
+.search-client-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: fadeIn 0.6s ease-out forwards;
+    position: relative;
+    border: 1px solid #e8e8e8;
+  
+    // Decorative top-right corner icon
+    &::before {
+      content: '\e614'; // Ant Design icon font code for FileSearchOutlined
+      font-family: 'anticon' !important;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      font-size: 40px;
+      color: #1890ff;
+      opacity: 0.1;
+      transform: rotate(45deg);
+    }
+  
+    .search-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: color 0.3s ease;
+  
+      .title-icon {
+        font-size: 28px;
+        color: #1890ff;
+        transition: transform 0.3s ease;
+      }
+  
+      &:hover {
+        color: #1890ff;
+  
+        .title-icon {
+          transform: rotate(360deg);
+        }
+  
+        &::after {
+          width: 100%;
+        }
+      }
+  
+      // Underline effect on hover
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #1890ff;
+        transition: width 0.3s ease;
+      }
+    }
+  
+    .search-form {
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+  
+      .skills-select,
+      .location-select {
+        .ant-select-selector {
+          border-radius: 8px;
+          border: 1px solid #d9d9d9;
+          padding: 8px 12px;
+          transition: all 0.3s ease;
+          height: 48px;
+  
+          .ant-select-selection-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #999;
+          }
+        }
+  
+        &:hover,
+        &.ant-select-focused .ant-select-selector {
+          border-color: #1890ff !important;
+          box-shadow: 0 0 8px rgba(24, 144, 255, 0.2);
+        }
+  
+        .select-icon {
+          font-size: 18px;
+          color: #1890ff;
+        }
+      }
+  
+      .search-button {
+        background: linear-gradient(90deg, #1890ff, #40a9ff);
+        border: none;
+        border-radius: 8px;
+        height: 48px;
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+  
+        &:hover {
+          background: linear-gradient(90deg, #40a9ff, #1890ff);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+        }
+  
+        .anticon {
+          font-size: 18px;
+          margin-right: 8px;
+        }
+      }
+    }
+  
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .search-client-wrapper {
+      padding: 15px;
+      border-radius: 8px;
+  
+      &::before {
+        font-size: 30px;
+        top: -10px;
+        right: -10px;
+      }
+  
+      .search-title {
+        font-size: 20px;
+  
+        .title-icon {
+          font-size: 24px;
+        }
+      }
+  
+      .search-form {
+        .skills-select,
+        .location-select {
+          .ant-select-selector {
+            height: 40px;
+            padding: 6px 10px;
+  
+            .ant-select-selection-placeholder {
+              font-size: 14px;
+            }
+          }
+  
+          .select-icon {
+            font-size: 16px;
+          }
+        }
+  
+        .search-button {
+          height: 40px;
+          font-size: 14px;
+  
+          .anticon {
+            font-size: 16px;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }

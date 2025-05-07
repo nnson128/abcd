@@ -1,0 +1,176 @@
+.client-job-page {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e6f0fa 100%);
+    padding: 30px 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  
+    // Subtle background pattern (dots)
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.3;
+      z-index: 0;
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      position: relative;
+      z-index: 1;
+    }
+  
+    .content-wrapper {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border: 1px solid #e8e8e8;
+      animation: fadeIn 0.8s ease-out forwards;
+  
+      // Decorative top-left corner icon (optional)
+      position: relative;
+      &::before {
+        content: '\e614'; // Ant Design icon font code for FileSearchOutlined
+        font-family: 'anticon' !important;
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        font-size: 40px;
+        color: #1890ff;
+        opacity: 0.1;
+        transform: rotate(-45deg);
+      }
+  
+      // Decorative bottom-right corner icon (optional)
+      &::after {
+        content: '\e614';
+        font-family: 'anticon' !important;
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+        font-size: 40px;
+        color: #1890ff;
+        opacity: 0.1;
+        transform: rotate(45deg);
+      }
+    }
+  
+    .custom-divider {
+      margin: 15px 0;
+      border-top: 2px dashed #d9d9d9;
+      position: relative;
+      animation: slideInDivider 1s ease-out forwards;
+  
+      // Small decorative icon in the middle of the divider
+      &::before {
+        content: '\e605'; // Ant Design icon font code for StarOutlined
+        font-family: 'anticon' !important;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        padding: 0 10px;
+        font-size: 16px;
+        color: #1890ff;
+      }
+    }
+  
+    .section-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  
+      .section-icon {
+        font-size: 28px;
+        color: #1890ff;
+        transition: transform 0.3s ease;
+      }
+  
+      &:hover {
+        color: #1890ff;
+        transform: translateX(5px);
+  
+        .section-icon {
+          transform: scale(1.2);
+        }
+      }
+    }
+  
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    @keyframes slideInDivider {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+      100% {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .client-job-page {
+      padding: 20px 0;
+  
+      .container {
+        padding: 0 10px;
+      }
+  
+      .content-wrapper {
+        padding: 20px;
+        border-radius: 12px;
+  
+        &::before,
+        &::after {
+          font-size: 30px;
+          top: -10px;
+          left: -10px;
+          bottom: -10px;
+          right: -10px;
+        }
+      }
+  
+      .custom-divider {
+        margin: 10px 0;
+  
+        &::before {
+          font-size: 14px;
+          top: -8px;
+        }
+      }
+  
+      .section-title {
+        font-size: 22px;
+  
+        .section-icon {
+          font-size: 24px;
+        }
+      }
+    }
+  }
