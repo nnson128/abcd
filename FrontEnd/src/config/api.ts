@@ -57,15 +57,13 @@ export const callLogout = () => {
 };
 export const callGoogleLogin = (idToken: string) => {
   console.log("Login gg: ", {
-    idToken:
-      "375619880981-hla5js4didg8108u2j814e89sonan5jq.apps.googleusercontent.com",
+    idToken: localStorage.getItem("access_token"),
   });
 
   return axios.post<IBackendRes<string>>(
     "/api/v1/auth/register/google",
     {
-      idToken:
-        "375619880981-hla5js4didg8108u2j814e89sonan5jq.apps.googleusercontent.com",
+      idToken: localStorage.getItem("access_token"),
     },
     {
       headers: {
