@@ -56,14 +56,10 @@ export const callLogout = () => {
   return axios.post<IBackendRes<string>>("/api/v1/auth/logout");
 };
 export const callGoogleLogin = (idToken: string) => {
-  console.log("Login gg: ", {
-    idToken: localStorage.getItem("access_token"),
-  });
-
   return axios.post<IBackendRes<string>>(
     "/api/v1/auth/register/google",
     {
-      idToken: localStorage.getItem("access_token"),
+      idToken: idToken
     },
     {
       headers: {
